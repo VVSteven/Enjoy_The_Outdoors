@@ -1,33 +1,52 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const stateSelection = document.getElementById("locationAccordian");
-  const typeSelection = document.getElementById("typeAccordian");
-
-  typeSelection.onchange = typeSelection;
-  stateSelection.onchange = stateSelection;
-
-  addStatesList();
-  addTypeLists();
+  displayType(parkTypesArray);
+  displayLocations(locationsArray);
 });
 
-function addStatesList() {}
-function addTypeLists() {}
+function displayType(parkTypesArray) {
+  const uListType = document.querySelector("#typeList");
+  uListType.innerText = "";
 
-function displayStates() {
-  const statesList = document.getElementById("statesList");
+  parkTypesArray.forEach((type) => {
+    const typeList = document.createElement("li");
+    uListType.appendChild(typeList);
 
-  for (let state of locationsArray) {
-    // console.log(state)
-    const option = new Option(state);
-    statesList.appendChild(option);
-  }
+    const displayParkType = document.createElement("a");
+    displayParkType.classList.add(
+      "link-body-emphasis",
+      "d-inline-flex",
+      "text-decoration-none",
+      "rounded"
+    );
+    const typeId = "type" + type.replace(/\s+/g, "");
+    displayParkType.id = typeId;
+    displayParkType.innerText = type;
+    typeList.appendChild(displayParkType);
+  });
 }
 
-function displayTypes() {
-  const statesList = document.getElementById("statesList");
+function displayLocations(locationsArray) {
+  const uListLocation = document.querySelector("#locationList");
+  uListLocation.innerText = "";
 
-  for (let state of locationsArray) {
-    // console.log(state)
-    const option = new Option(state);
-    statesList.appendChild(option);
-  }
+  locationsArray.forEach((location) => {
+    const locationList = document.createElement("li");
+    uListLocation.appendChild(locationList);
+
+    const displayStateName = document.createElement("a");
+    displayStateName.classList.add(
+      "link-body-emphasis",
+      "d-inline-flex",
+      "text-decoration-none",
+      "rounded"
+    );
+    const stateId = "state" + location.replace(/\s+/g, "");
+    displayStateName.id = stateId;
+    displayStateName.innerText = location;
+    locationList.appendChild(displayStateName);
+  });
+}
+
+function displayNationalParks(){
+  
 }
