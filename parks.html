@@ -10,9 +10,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link href="styles/index.css" rel="stylesheet" />
+    <link href="styles/index.css" rel="stylesheet"/>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parks.js"></script>
   </head>
-
   <body>
     <header
       class=""
@@ -51,22 +53,44 @@
       </div>
     </header>
     <main>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col">
-            <form class=" g">
-              <label class=" form-label"></label>
-              <select class="form-select"></select>
-            </form>
-          </div>
-          <div class="col">
-            <form>
-              <label></label>
-              <select class="form-select"></select>
-            </form>
-          </div>
-          </div>
-        </div>
+      <div class="flex-shrink-0 p-3 " style="width: 280px">
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
+        >
+          <svg class="bi pe-none me-2" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-5 fw-semibold">National Parks</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#home-collapse"
+              aria-expanded="true"
+            >
+              Search By Location
+            </button>
+            <div class="collapse show" id="locationAccordian">
+            </div>
+          </li>
+          <li class="my-3 border-top">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed p-3"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              aria-expanded="false"
+            >
+              Search By Type
+            </button>
+            <div class="collapse" id="typeAccordian">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </main>
     <footer class="mt-5 container-fluid" style="background-color: #7e7e7c">
