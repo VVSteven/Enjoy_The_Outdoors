@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Location Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-info {
+            width: 48%;
+            margin-right: 4%;
+            margin-bottom: 20px;
+        }
+
+        .additional-info {
+            width: 48%;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button onclick="toggleAdditionalInfo()">Show Additional Details</button>
+
+    <div class="info-container">
+        <!-- Display Full Location Information -->
+        <div class="main-info">
+            <p><strong>Location Name:</strong> Abraham Lincoln Birthplace National Historical Park</p>
+            <p><strong>Address:</strong> 2995 Lincoln Farm Road</p>
+            <p><strong>City:</strong> Hodgenville</p>
+            <p><strong>State:</strong> Kentucky</p>
+            <p><strong>Zip Code:</strong> 42748</p>
+            <p><strong>Phone:</strong> (270) 358-3137</p>
+            <p><strong>Fax:</strong> (270) 358-3874</p>
+        </div>
+
+        <!-- Hidden Information on the Right -->
+        <div class="additional-info">
+            <p><strong>Location ID:</strong> ABLI</p>
+            <p><strong>Location Type:</strong> Point</p>
+            <p><strong>Latitude:</strong> 37.535671</p>
+            <p><strong>Longitude:</strong> -85.7340637</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAdditionalInfo() {
+        const additionalInfo = document.querySelector('.additional-info');
+        additionalInfo.style.display = additionalInfo.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+
+</body>
+</html>

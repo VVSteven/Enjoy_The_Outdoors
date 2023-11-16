@@ -11,8 +11,11 @@
       crossorigin="anonymous"
     />
     <link href="styles/index.css" rel="stylesheet" />
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parks.js"></script>
   </head>
-
   <body>
     <header
       class=""
@@ -50,24 +53,83 @@
         </nav>
       </div>
     </header>
-    <main>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col">
-            <form class=" g">
-              <label class=" form-label"></label>
-              <select class="form-select"></select>
-            </form>
+    <main style="display: flex">
+      <section class="flex-shrink-0 p-3" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+          <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-5 fw-semibold">National Parks</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#type-collapse" aria-expanded="true">
+              Search By Type
+            </button>
+            <div class="collapse hide" id="type-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="typeList">
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#location-collapse" aria-expanded="false">
+              Search By Location
+            </button>
+            <div class="collapse" id="location-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" id="locationList">
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="flex-column" style="width: auto;">
+        <div class="container my-5" id="informationDiv">
+          <div class="p-5 bg-body-tertiary rounded-3">
+              <h1 class="text-body-emphasis">Location Information</h1>
+              <dl class="row mt-4">
+                  <dt class="col-sm-2">Location Name:</dt>
+                  <dd class="col-sm-5">Abraham Lincoln Birthplace National Historical Park</dd>
+  
+                  <dt class="col-sm-1">Address:</dt>
+                  <dd class="col-sm-4">2995 Lincoln Farm Road</dd>
+              </dl>
+              <dl class="row mt-4">
+                  <dt class="col-sm-1">City:</dt>
+                  <dd class="col-sm-2">Hodgenville</dd>
+  
+                  <dt class="col-sm-1">State:</dt>
+                  <dd class="col-sm-2">Kentucky</dd>
+  
+                  <dt class="col-sm-2">Zip Code:</dt>
+                  <dd class="col-sm-1">42748</dd>
+              </dl>
+              <dl class="row mt-4">
+                  <dt class="col-sm-1">Phone:</dt>
+                  <dd class="col-sm-2">(270) 358-3137</dd>
+  
+                  <dt class="col-sm-1">Fax:</dt>
+                  <dd class="col-sm-2">(270) 358-3874</dd>
+              </dl>
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed btn-outline-dark" data-bs-toggle="collapse" data-bs-target="#infoCollapse" aria-expanded="true">
+                Additional Information
+              </button>
+              <div class="collapse hide" id="infoCollapse">
+                  <dl class="row mt-4">
+                      <dt class="col-sm-3">Location ID:</dt>
+                      <dd class="col-sm-9">ABLI</dd>
+  
+                      <dt class="col-sm-3">Location Type:</dt>
+                      <dd class="col-sm-9">Point</dd>
+  
+                      <dt class="col-sm-3">Latitude:</dt>
+                      <dd class="col-sm-9">37.535671</dd>
+      
+                      <dt class="col-sm-3">Longitude:</dt>
+                      <dd class="col-sm-9">-85.7340637</dd>
+                  </dl>
+              </div>
           </div>
-          <div class="col">
-            <form>
-              <label></label>
-              <select class="form-select"></select>
-            </form>
-          </div>
-          </div>
-        </div>
       </div>
+      </section>
     </main>
     <footer class="mt-5 container-fluid" style="background-color: #7e7e7c">
       <div class="p-3 border-2 border-black border-bottom">
