@@ -1,82 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Location Information</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .info-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .main-info {
-            width: 48%;
-            margin-right: 4%;
-            margin-bottom: 20px;
-        }
-
-        .additional-info {
-            width: 48%;
-            display: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <button onclick="toggleAdditionalInfo()">Show Additional Details</button>
-
-    <div class="info-container">
-        <!-- Display Full Location Information -->
-        <div class="main-info">
-            <p><strong>Location Name:</strong> Abraham Lincoln Birthplace National Historical Park</p>
-            <p><strong>Address:</strong> 2995 Lincoln Farm Road</p>
-            <p><strong>City:</strong> Hodgenville</p>
-            <p><strong>State:</strong> Kentucky</p>
-            <p><strong>Zip Code:</strong> 42748</p>
-            <p><strong>Phone:</strong> (270) 358-3137</p>
-            <p><strong>Fax:</strong> (270) 358-3874</p>
-        </div>
-
-        <!-- Hidden Information on the Right -->
-        <div class="additional-info">
-            <p><strong>Location ID:</strong> ABLI</p>
-            <p><strong>Location Type:</strong> Point</p>
-            <p><strong>Latitude:</strong> 37.535671</p>
-            <p><strong>Longitude:</strong> -85.7340637</p>
-        </div>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="styles/index.css" rel="stylesheet" />
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/parks.js"></script>
+  </head>
+  <body>
+    <div class="flex-shrink-0 p-3" style="width: 280px">
+      <a
+        href="/"
+        class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
+      >
+        <svg class="bi pe-none me-2" width="30" height="24">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-5 fw-semibold">Collapsible</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button
+            class="btn btn-toggle d-inline-flex align-items-center rounded border-0"
+            data-bs-toggle="collapse"
+            data-bs-target="#home-collapse"
+            aria-expanded="true"
+          >
+            Home
+          </button>
+          <div class="collapse show" id="home-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="overviewCheckbox"
+                  />
+                  <label class="form-check-label" for="overviewCheckbox">
+                    Overview
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="updatesCheckbox"
+                  />
+                  <label class="form-check-label" for="updatesCheckbox">
+                    Updates
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="reportsCheckbox"
+                  />
+                  <label class="form-check-label" for="reportsCheckbox">
+                    Reports
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- ... (other list items) ... -->
+      </ul>
     </div>
-</div>
 
-<script>
-    function toggleAdditionalInfo() {
-        const additionalInfo = document.querySelector('.additional-info');
-        additionalInfo.style.display = additionalInfo.style.display === 'none' ? 'block' : 'none';
-    }
-</script>
-
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
