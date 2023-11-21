@@ -1,98 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-  displayType(parkTypesArray);
-  displayLocations(locationsArray);
-  const typeClicked = document.getElementById("typeList");
-  const locationClicked = document.getElementById("locationList");
-
-  // typeClicked.onchange = filter;
-  // locationClicked.onchange = filter;
-  // filter();
-  displayNationalParksInformation(nationalParksArray);
-  // linkCancel();
-  // displayFilltered();
-
-
-
-  const typeElements = document.querySelectorAll("#typeList a");
-  
-  for(let typeElement of typeElements) {
-    typeElement.addEventListener("click", function (event) {
-      event.preventDefault();
-      selectedType = typeElement.textContent;
-      // console.log(selectedType);
-      console.log(selectedType);
-      filter(selectedType);
-    });
-  }
-    const stateElements = document.querySelectorAll("#locationList a");
-  
-    for(let stateElement of stateElements) {
-      stateElement.addEventListener("click", function (event) {
-        event.preventDefault();
-        selectedState = stateElement.textContent;
-        console.log(selectedState);
-        filter(selectedState);
-      });
-    }
-})
-
-let selectedState = "Show All"
-let selectedType = "Show All"  
-
-
-
-function displayType(parkTypesArray) {
-  const uListType = document.querySelector("#typeList");
-  uListType.innerText = "";
-
-  parkTypesArray.forEach((type) => {
-    const typeList = document.createElement("li");
-    uListType.appendChild(typeList);
-
-    const displayParkType = document.createElement("a");
-    displayParkType.classList.add(
-      "link-body-emphasis",
-      "d-inline-flex",
-      "text-decoration-none",
-      "rounded"
-    );
-    const typeId = "type" + type.replace(/\s+/g, "");
-    displayParkType.id = typeId;
-    displayParkType.innerText = type;
-    typeList.appendChild(displayParkType);
-  });
-}
-
-function displayLocations(locationsArray) {
-  const uListLocation = document.querySelector("#locationList");
-  uListLocation.innerText = "";
-
-  locationsArray.forEach((location) => {
-    const locationList = document.createElement("li");
-    uListLocation.appendChild(locationList);
-
-    const displayStateName = document.createElement("a");
-    displayStateName.classList.add(
-      "link-body-emphasis",
-      "d-inline-flex",
-      "text-decoration-none",
-      "rounded"
-    );
-
-    const stateId = "state" + location.replace(/\s+/g, "");
-    displayStateName.id = stateId;
-    displayStateName.innerText = location;
-    locationList.appendChild(displayStateName);
-  });
-}
-
-function displayNationalParksInformation(nationalPark, ) {
+ function displayNationalParkInformation() {
   const informationDiv = document.querySelector("#informationDiv");
   informationDiv.innerText = "";
 
   nationalParksArray.forEach((location) => {
+    
     const informationDiv2 = document.createElement("div");
-    informationDiv2.classList.add("p-5", "bg-body-tertiary", "rounded-3");
+    informationDiv2.classList.add("p-5","rounded-3");
     informationDiv2.id = "informationDiv" + location.LocationID;
     informationDiv.appendChild(informationDiv2);
 
@@ -250,68 +163,5 @@ function displayNationalParksInformation(nationalPark, ) {
     longitude.classList.add("col-sm-9");
     longitude.innerText = location.Longitude;
     additionalInfoDefine.appendChild(longitude);
-  });
-}
-
-function linkCancel() {
-  const typeElements = document.querySelector("#typeList a");
-  typeElements.forEach((typeElements) => {
-    typeElements.addEventListener("click", function (event) {
-      event.preventDefault();
-      const selectedType = typeElements.textContent;
-      console.log(selectedType);
-    });
-  });
-  const stateElements = document.querySelector("#locationList a");
-  stateElements.forEach((stateElement) => {
-    stateElement.addEventListener("click", function (event) {
-      event.preventDefault();
-      const selectedState = stateElement.textContent;
-      console.log(selectedState);
-    });
-  });
-}
-
-function filter() {
-  // const typeClicked = document.getElementById("typeList").value;
-  // const typeClicked = document.querySelectorAll("#typeList a").textContent;
-  // console.log(document.getElementById("typeList"))
-  // console.log(typeClicked)
-  // const locationClicked = document.getElementById("locationList").value;
-  // const locationClicked = document.querySelectorAll("#locationList a").textContent;
-  // console.log(document.getElementById("locationList"))
-  // console.log(locationClicked)
-
-  let filterStates = nationalParksArray;
-
-  if (selectedState != "Show All") {
-    filterStates = filterStates.filter((f) => f.State == selectedState);
-  }
-  // console.log(filterStates);
-  if (selectedType != "Show All") {
-    filterStates = filterStates.filter((f) =>
-      f.LocationName.toLowerCase().includes(selectedType.toLowerCase())
-    );
-  }
-  // filterStates = filterStates.filter((f) => f.State == category);
-  // filterStates=filterStates.filter((f) =>
-  //     f.LocationName.includes(category))
-
-
-  
-  console.log(filterStates);
-
-  displayFilltered(filterStates);
-}
-
-function displayFilltered(filterStates) {
-  
-  const filteredContainer = document.querySelector("#informationDiv")
-  filteredContainer.innerText = "";
-
-  nationalParksArray.forEach(location => {
-
-      //displayPark(location, filteredContainer)
-      
   });
 }
