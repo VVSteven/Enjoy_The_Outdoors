@@ -62,7 +62,7 @@ function displayMountains(mountains) {
 
 function displayMountain(mountain, parentDiv) {
   const mountainDiv = document.createElement("div");
-  mountainDiv.classList.add("product");
+  mountainDiv.classList.add("border-bottom", "border-2");
   parentDiv.appendChild(mountainDiv);
 
   addMountainHeader(mountain, mountainDiv);
@@ -73,6 +73,7 @@ function displayMountain(mountain, parentDiv) {
 
 function addMountainHeader(mountain, productDiv) {
   const mountainHeader = document.createElement("h2");
+  mountainHeader.classList.add("my-3");
   mountainHeader.innerText = mountain.name;
   productDiv.appendChild(mountainHeader);
 }
@@ -83,6 +84,7 @@ function addImageRow(mountain, parent) {
 
   const img = document.createElement("img");
   img.src = "images/" + mountain.img;
+  img.classList.add("mb-3");
   imageRow.appendChild(img);
 
   const elevation = document.createElement("h4");
@@ -104,7 +106,7 @@ function addAdditionalInfo(mountain, parent) {
   parent.appendChild(additionalInfoDiv);
 
   const effort = document.createElement("p");
-  effort.innerText = "Effort" + mountain.effort;
+  effort.innerText = "Effort: " + mountain.effort;
   additionalInfoDiv.appendChild(effort);
 
   const coords = document.createElement("p");
