@@ -1,4 +1,4 @@
-### Enjoy The Outdoors
+##### Enjoy The Outdoors
 
 The goal for the project was to demonstrate the integration of JavaScript with HTML and CSS, focusing on dynamic content generation and manipulation of the Document Object Model (DOM).
 
