@@ -1,4 +1,4 @@
-##### Enjoy The Outdoors
+# Enjoy The Outdoors
 
 The goal for the project was to demonstrate the integration of JavaScript with HTML and CSS, focusing on dynamic content generation and manipulation of the Document Object Model (DOM).
 
@@ -27,7 +27,7 @@ The goal for the project was to demonstrate the integration of JavaScript with H
 - Filter options include type and location.
 - Utilized city arrays to display national parks in specific locations.
 - Accessed detailed information about each national park from the `nationalParksArray`.
-### JavaScript Functionality Overview
+#### Park Page JavaScript Functionality Overview
 
 - **DOMContentLoaded Event Listener**: Ensures that the DOM content is fully loaded before executing JavaScript functions.
 - **Display Functions**: 
@@ -44,7 +44,7 @@ The goal for the project was to demonstrate the integration of JavaScript with H
 - **Helper Functions**:
   - `clearFiltersButtons`: Clears the text content of the clear buttons.
 
-### Usage
+#### Usage
 
 1. **Dropdown Selection**: Users can select a specific park type and location from the dropdown menus.
 2. **Filtering**: Parks are dynamically filtered based on the selected park type and location.
@@ -54,7 +54,7 @@ The goal for the project was to demonstrate the integration of JavaScript with H
 - Contains navigation, hero image, and a filter section on the right.
 - Main content dynamically displays filtered results based on selection.
 - Filter options include mountain and elevation.
-  ### JavaScript Functionality Overview
+  #### Mountains Page JavaScript Functionality Overview
 
 - **DOMContentLoaded Event Listener**: The code ensures that the DOM content is fully loaded before executing JavaScript functions.
 - **Event Listeners**: Three event listeners are added to listen for changes in the mountain select dropdown and the minimum and maximum elevation input fields. When changes occur, the `filterMountains` function is called.
@@ -64,7 +64,7 @@ The goal for the project was to demonstrate the integration of JavaScript with H
 - **`displayMountain` Function**: Creates a div for each mountain and populates it with the mountain's information.
 - **Helper Functions**: Several helper functions are used to add headers, images, descriptions, and additional information for each mountain.
 
-### Usage
+#### Usage
 
 1. **Dropdown Selection**: Users can select a specific mountain from the dropdown menu.
 2. **Elevation Range Selection**: Users can adjust the minimum and maximum elevation range to filter mountains accordingly.
